@@ -1,0 +1,12 @@
+.*
+!.gitignore
+modules/
+__pycache__
+venv
+output
+build
+*.ttf
+!template.ttf
+*.ufo
+*.otf
+.vscode
