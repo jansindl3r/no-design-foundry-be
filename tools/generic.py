@@ -116,8 +116,11 @@ def rename_name_ttfont(font, suffix) -> None:
 def rename_name_ufo(font, suffix) -> None:
     old_name = font.info.familyName
     new_name =  f"{old_name} {suffix}"
-
-    font.info.openTypeNameRecords.clear()
+    try:
+        font.info.openTypeNameRecords.clear()
+    except Exception as e:
+        print("font info already cleared")
+        pass
 
     font.info.familyName = new_name
     font.info.styleMapFamilyName = new_name
